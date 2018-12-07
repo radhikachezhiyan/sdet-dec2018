@@ -1,34 +1,53 @@
 
-package com.training.client;
+package com.training.entity;
 
-import com.training.dao.EmployeeDAO;
-import com.training.entity.Employee;
-import com.training.standards.IEmployeeDAO;
+public class Employee {
 
-public class EmployeeClient {
 
-	public static void main(String[] args) {
-		Employee employee = new Employee();
-		employee.setEmpId(104);
-		employee.setEmpName("Jill");
-		employee.setEmpSal(11120);
-		employee.setEmpEmail("jill@abc.com");
-		
-		IEmployeeDAO dao = new EmployeeDAO();
-		
-		/*boolean insertFlag = dao.insertEmployee(employee);
-		
-		System.out.println(insertFlag ? "Record Inserted" : "Sorry Record Not Inserted");*/
-		
-		/*System.out.println(dao.deleteEmployee(103));*/
-		
-		/*System.out.println(dao.updateEmployeeSalary(102, 11000));*/
-		
-		
-		//System.out.println(dao.getEmployee(101));
-		
-		dao.getAllEmps().forEach(System.out :: println);
-		
-	}
+			private int empId;
+			private String empName;
+			private double empSal;
+			private String empEmail;
+			
+			public Employee() {}
+			
+			public Employee(int empId, String empName, double empSal, String empEmail) {
+				super();
+				this.empId = empId;
+				this.empName = empName;
+				this.empSal = empSal;
+				this.empEmail = empEmail;
+			}
+			
 
+			public int getEmpId() {
+				return empId;
+			}
+			public void setEmpId(int empId) {
+				this.empId = empId;
+			}
+			public String getEmpName() {
+				return empName;
+			}
+			public void setEmpName(String empName) {
+				this.empName = empName;
+			}
+			public double getEmpSal() {
+				return empSal;
+			}
+			public void setEmpSal(double empSal) {
+				this.empSal = empSal;
+			}
+			public String getEmpEmail() {
+				return empEmail;
+			}
+			public void setEmpEmail(String empEmail) {
+				this.empEmail = empEmail;
+			}
+			@Override
+			public String toString() {
+				return "Employee [empId=" + empId + ", empName=" + empName + ", empSal=" + empSal + ", empEmail="
+						+ empEmail + "]";
+			}
+		
 }
